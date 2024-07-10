@@ -4,9 +4,9 @@
 
 ## 文档地址 / Documentation URL 
 
-[中文 / Chinese](`gitee文档链接`)
+[中文 / Chinese](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/xxx.md)
 
-[英文 / English](`gitee文档链接`)
+[英文 / English](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-en/xxx.md)
 
 ## Codegen
 
