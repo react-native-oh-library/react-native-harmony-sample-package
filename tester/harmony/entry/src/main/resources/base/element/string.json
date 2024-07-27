@@ -1,0 +1,48 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "camera_reason",
+      "value": "使用相机"
+    },
+    {
+      "name": "location_reason",
+      "value": "获取当前位置"
+    },
+    {
+      "name": "microphone_reason",
+      "value": "使用麦克风"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "RN Tester"
+    },
+    {
+      "name": "Qr_decode_image_cameraAbility_desc",
+      "value": "RN Tester"
+    },
+    {
+      "name": "Staging",
+      "value": "cgBpcUOBWysrtmUZVWOFYLCYcRUX4ksvOXqog"
+    },
+    {
+      "name": "Production",
+      "value": "pyw6oVtid93fORIQiqKSwZxCSffj4ksvOXqog"
+    },
+    {
+      "name": "ServerUrl",
+      "value": "http://1.94.37.200:8084"
+    },
+    {
+      "name": "PublicKey",
+      "value": "PublicKey"
+    }
+  ]
+}
