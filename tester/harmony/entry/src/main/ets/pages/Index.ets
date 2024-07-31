@@ -10,6 +10,7 @@ import {
   TraceJSBundleProviderDecorator,
   RNOHCoreContext
 } from '@rnoh/react-native-openharmony';
+import { GeneratedSampleViewArkTS } from '@react-native-oh-tpl/codegen-sample-package';
 import font from '@ohos.font';
 import { createRNPackages } from '../RNPackagesFactory';
 import fs from  "@ohos.file.fs";
@@ -18,12 +19,18 @@ import common from '@ohos.app.ability.common';
 let context = getContext(this) as common.UIAbilityContext;
 
 const arkTsComponentNames: Array<string> = [
+  GeneratedSampleViewArkTS.NAME
 ];
 @Builder
 export function buildCustomRNComponent(ctx: ComponentBuilderContext) {
   // There seems to be a problem with the placement of ArkTS components in mixed mode. Nested Stack temporarily avoided.
   Stack(){
-
+    if (ctx.componentName === GeneratedSampleViewArkTS.NAME) {
+      GeneratedSampleViewArkTS({
+        ctx: ctx.rnComponentContext,
+        tag: ctx.tag
+      })
+    }
   }
   .position({x:0, y: 0})
 

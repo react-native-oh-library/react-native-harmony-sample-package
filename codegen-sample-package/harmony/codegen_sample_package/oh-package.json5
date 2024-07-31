@@ -1,0 +1,19 @@
+{
+  "name": "@react-native-oh-tpl/codegen-sample-package",
+  "version": "0.0.1-0.0.0",
+  "description": "Please describe the basic information.",
+  "main": "index.ets",
+  "author": "",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@rnoh/react-native-openharmony": "file:../react_native_openharmony"
+  },
+  "metadata": {
+    "sourceRoots": [
+      "./src/main"
+    ]
+  },
+  "compatibleSdkVersion": 12,
+  "compatibleSdkType": "HarmonyOS",
+  "obfuscated": false
+}

@@ -1,4 +1,5 @@
 import type {RNPackageContext, RNPackage} from '@rnoh/react-native-openharmony/ts';
+import {SamplePackage} from '@react-native-oh-tpl/codegen-sample-package/ts';
 
 
 /**
@@ -27,5 +28,6 @@ import type {RNPackageContext, RNPackage} from '@rnoh/react-native-openharmony/t
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
+    new SamplePackage(ctx),
   ];
 }

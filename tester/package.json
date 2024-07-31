@@ -5,10 +5,12 @@
   "scripts": {
     "i": "npm install",
     "start": "npm run codegen && hdc rport tcp:8081 tcp:8081 && react-native start",
-    "codegen": "react-native codegen-harmony --rnoh-module-path ./harmony/react_native_openharmony",
+    "codegen": "react-native codegen-harmony --rnoh-module-path ./harmony/entry/oh_modules/@rnoh/react-native-openharmony",
     "dev": "npm run codegen && react-native bundle-harmony --dev --minify=false"
   },
   "dependencies": {
+    "@gorhom/portal": "^1.0.14",
+    "@react-native-oh-tpl/codegen-sample-package": "file:../codegen-sample-package/react-native-oh-tpl-codegen-sample-package-0.0.1-0.0.1.tgz",
     "react": "18.2.0",
     "react-native": "0.72.5",
     "react-native-harmony": "file:./rnoh_package/rnoh-react-native-harmony-0.72.27.tgz"
