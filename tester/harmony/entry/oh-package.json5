@@ -6,5 +6,6 @@
   "version": "1.0.0",
   "dependencies": {
     "@rnoh/react-native-openharmony": "file:../react_native_openharmony",
+    "@react-native-oh-tpl/codegen-sample-package": "file:../../node_modules/@react-native-oh-tpl/codegen-sample-package/harmony/codegen_sample_package.har",
   }
 }
