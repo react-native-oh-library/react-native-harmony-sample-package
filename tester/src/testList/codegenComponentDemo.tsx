@@ -5,7 +5,7 @@ import {
 import React from 'react';
 import {View} from 'react-native';
 
-export function CustomNativeComponent() {
+export function CodegenComponentDemo() {
   return (
     <View>
       <GeneratedSampleComponentArkTS

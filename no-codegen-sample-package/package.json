@@ -1,0 +1,28 @@
+{
+  "name": "@react-native-oh-tpl/no-codegen-sample-package",
+  "description": "react native harmony sample package, no codegen",
+  "main": "index.ts",
+  "license": "MIT",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "react-native start"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "files": [
+    "src",
+    "harmony",
+    "index.ts",
+    "License",
+    "package.json",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__"
+  ],
+  "keywords": ["react-native", "harmony", "sample-package"],
+  "harmony": {
+    "alias": "no-codegen-sample-package"
+  }
+}

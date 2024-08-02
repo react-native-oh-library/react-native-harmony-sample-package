@@ -7,5 +7,8 @@
   "dependencies": {
     "@rnoh/react-native-openharmony": "file:../react_native_openharmony",
     "@react-native-oh-tpl/codegen-sample-package": "file:../../node_modules/@react-native-oh-tpl/codegen-sample-package/harmony/codegen_sample_package.har",
+    "@react-native-oh-tpl/no-codegen-sample-package": "file:../../node_modules/@react-native-oh-tpl/no-codegen-sample-package/harmony/no_codegen_sample_package.har",
+//    "@react-native-oh-tpl/no-codegen-sample-package": "file:../no_codegen_sample_package",
+//    "@react-native-oh-tpl/codegen-sample-package": "file:../codegen_sample_package"
   }
 }
