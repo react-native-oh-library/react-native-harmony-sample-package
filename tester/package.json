@@ -6,7 +6,8 @@
     "i": "npm install",
     "start": "npm run codegen && hdc rport tcp:8081 tcp:8081 && react-native start",
     "codegen": "react-native codegen-harmony --rnoh-module-path ./harmony/entry/oh_modules/@rnoh/react-native-openharmony",
-    "dev": "npm run codegen && react-native bundle-harmony --dev --minify=false"
+    "dev": "npm run codegen && react-native bundle-harmony --dev --minify=false",
+    "postinstall": "node ./scripts/create-build-profile"
   },
   "dependencies": {
     "@gorhom/portal": "^1.0.14",
