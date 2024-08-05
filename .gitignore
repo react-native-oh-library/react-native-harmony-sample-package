@@ -7,3 +7,7 @@ demo/*
 *.drawio.*
 build
 tester/harmony/react_native_openharmony/
+tester/harmony/codegen_sample_package/
+tester/harmony/no_codegen_sample_package/
+tester-codegen/
+*.tgz

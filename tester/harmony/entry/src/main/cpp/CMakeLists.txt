@@ -18,6 +18,8 @@ add_subdirectory("${RNOH_CPP_DIR}" ./rn)
 
 # RNOH_BEGIN: manual_package_linking_1
 add_subdirectory("${OH_MODULE_DIR}/@react-native-oh-tpl/codegen-sample-package/src/main/cpp" ./codegen-sample-package)
+add_subdirectory("${OH_MODULE_DIR}/@react-native-oh-tpl/no-codegen-sample-package/src/main/cpp/forArkTS" ./no-codegen-sample-package-arkts)
+add_subdirectory("${OH_MODULE_DIR}/@react-native-oh-tpl/no-codegen-sample-package/src/main/cpp/forCAPI" ./no-codegen-sample-package-capi)
 # RNOH_END: manual_package_linking_1
 
 file(GLOB GENERATED_CPP_FILES "${CMAKE_CURRENT_SOURCE_DIR}/generated/*.cpp") # this line is needed by codegen v1
@@ -30,4 +32,6 @@ target_link_libraries(rnoh_app PUBLIC rnoh)
 
 # RNOH_BEGIN: manual_package_linking_2
 target_link_libraries(rnoh_app PUBLIC codegen_sample_package)
+target_link_libraries(rnoh_app PUBLIC no_codegen_sample_package_arkts)
+target_link_libraries(rnoh_app PUBLIC no_codegen_sample_package_capi)
 # RNOH_END: manual_package_linking_2

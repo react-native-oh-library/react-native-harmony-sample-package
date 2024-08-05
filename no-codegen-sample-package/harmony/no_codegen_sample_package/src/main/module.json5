@@ -1,0 +1,9 @@
+{
+  "module": {
+    "name": "no_codegen_sample_package",
+    "type": "har",
+    "deviceTypes": [
+      "default"
+    ]
+  }
+}

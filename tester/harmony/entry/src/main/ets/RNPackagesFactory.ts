@@ -1,5 +1,6 @@
 import type {RNPackageContext, RNPackage} from '@rnoh/react-native-openharmony/ts';
-import {SamplePackage} from '@react-native-oh-tpl/codegen-sample-package/ts';
+import {CodegenSamplePackage} from '@react-native-oh-tpl/codegen-sample-package/ts';
+import {NoCodegenSamplePackage} from '@react-native-oh-tpl/no-codegen-sample-package/ts';
 
 
 /**
@@ -28,6 +29,7 @@ import {SamplePackage} from '@react-native-oh-tpl/codegen-sample-package/ts';
 
 export function createRNPackages(ctx: RNPackageContext): RNPackage[] {
   return [
-    new SamplePackage(ctx),
+    new CodegenSamplePackage(ctx),
+    new NoCodegenSamplePackage(ctx),
   ];
 }
