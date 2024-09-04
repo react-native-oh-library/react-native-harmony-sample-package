@@ -34,7 +34,8 @@
       {
         "version": 2,
         "specPaths": [
-          "./src/Fabric/specs/v2"
+          "./src/Fabric/specs/v2",
+          "./src/TurboModule/specs/v2"
         ]
       }
     ]

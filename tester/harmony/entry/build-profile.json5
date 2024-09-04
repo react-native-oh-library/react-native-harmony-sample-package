@@ -5,6 +5,7 @@
       "path": "./src/main/cpp/CMakeLists.txt",
       "arguments": "",
       "cppFlags": "-s",
+      "abiFilters": ["arm64-v8a", "x86_64"]
     },
   },
   "targets": [
