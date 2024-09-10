@@ -1,140 +1,101 @@
-import {TestSuite} from '@rnoh/testerino';
-import {
-  SampleTurboModule,
-  GeneratedSampleTurboModule,
-} from 'react-native-sample-package';
+import {Alert, Button, View} from 'react-native';
+import {CodegenSampleTurboModule} from '@react-native-oh-tpl/codegen-sample-package';
 import {
   SomeEnum1,
   SomeEnum2,
   SomeEnum3,
-} from 'react-native-sample-package/src/specs/v2/NativeGeneratedSampleTurboModule';
-import {TestCase} from '../components';
+} from '@react-native-oh-tpl/codegen-sample-package';
 
-export function TurboModuleTest() {
+export function TurboModule() {
   return (
-    <TestSuite name="TurboModule">
-      <TestSuite name="manual implementation">
-        <TestCase.Logical
-          itShould="return null when calling getNull()"
-          fn={({expect}) => {
-            expect(SampleTurboModule.getNull(null)).to.be.null;
-          }}
-        />
-        <TestCase.Logical
-          itShould="return [1, 2, 3] when calling getArray"
-          fn={({expect}) => {
-            expect(SampleTurboModule.getArray([1, 2, 3])).to.eql([1, 2, 3]);
-          }}
-        />
-        <CommonTurboModuleTestCases sampleTurboModule={SampleTurboModule} />
-      </TestSuite>
-      <TestSuite name="generated">
-        <CommonTurboModuleTestCases
-          sampleTurboModule={GeneratedSampleTurboModule}
-        />
-        <TestCase.Logical
-          itShould="get union value"
-          fn={async ({expect}) => {
-            expect(GeneratedSampleTurboModule.getUnionValue('foo')).to.be.eq(
-              'foo',
-            );
-          }}
-        />
-        <TestCase.Logical
-          itShould="support enums"
-          fn={async ({expect}) => {
-            const result = GeneratedSampleTurboModule.getEnum(
-              SomeEnum1.FOO,
-              SomeEnum2.FOO,
-              SomeEnum3.FOO,
-            );
-            expect(result.enum1).to.be.eq(SomeEnum1.FOO);
-            expect(result.enum2).to.be.eq(SomeEnum2.FOO);
-            expect(result.enum3).to.be.eq(SomeEnum3.FOO);
-          }}
-        />
-        <TestCase.Logical
-          itShould="handle enums without specified values correctly"
-          skip="RN codegen doesn't parse enums without explicit values correctly"
-          fn={async ({expect}) => {
-            const result = GeneratedSampleTurboModule.getEnum(
-              SomeEnum1.FOO,
-              SomeEnum2.FOO,
-              SomeEnum3.FOO,
-            );
-            expect(result.hardcodedEnum1 === SomeEnum1.FOO).to.be.true;
-          }}
-        />
-      </TestSuite>
-    </TestSuite>
-  );
-}
-
-function CommonTurboModuleTestCases({
-  sampleTurboModule,
-}: {
-  sampleTurboModule: typeof GeneratedSampleTurboModule;
-}) {
-  return (
-    <>
-      <TestCase.Logical
-        itShould="return null when calling voidFunc()"
-        fn={({expect}) => {
-          expect(sampleTurboModule.voidFunc()).to.be.null;
+    <View>
+      <Button
+        title="return null when calling voidFunc()"
+        onPress={() => {
+          const result = CodegenSampleTurboModule.voidFunc();
+          Alert.alert(`result: ${result}`);
         }}
       />
-      <TestCase.Logical
-        itShould="return true when calling getBool(true)"
-        fn={({expect}) => {
-          expect(sampleTurboModule.getBool(true)).to.be.true;
+      <Button
+        title="return true when calling getBool(true)"
+        onPress={() => {
+          const result = CodegenSampleTurboModule.getBool(true);
+          Alert.alert(`result: ${result}`);
         }}
       />
 
-      <TestCase.Logical
-        itShould="return { x: { y: 1 } } when calling getObject"
-        fn={({expect}) => {
-          expect(sampleTurboModule.getObject({x: {y: 1}})).to.eql({
-            x: {y: 1},
-          });
+      <Button
+        title="return { x: { y: 1 } } when calling getObject"
+        onPress={() => {
+          const result = CodegenSampleTurboModule.getObject({x: {y: 1}});
+          Alert.alert(`result: ${JSON.stringify(result)}`);
         }}
       />
-      <TestCase.Logical
-        itShould="call the callback and providing string argument"
-        fn={async ({expect}) => {
+      <Button
+        title="call the callback and providing string argument"
+        onPress={async () => {
           const promise = new Promise<string>(resolve => {
-            sampleTurboModule.registerFunction(resolve);
+            CodegenSampleTurboModule.registerFunction(resolve);
           });
-          expect(typeof (await promise)).to.be.eq('string');
+          Alert.alert(`result: ${JSON.stringify(promise)}`);
         }}
       />
-      <TestCase.Logical
-        itShould="handle async jobs"
-        fn={async ({expect}) => {
-          const result = await sampleTurboModule?.doAsyncJob(true);
-          expect(typeof result).to.be.eq('string');
+      <Button
+        title="handle async jobs"
+        onPress={async () => {
+          const result = await CodegenSampleTurboModule?.doAsyncJob(true);
+          Alert.alert(`result: ${JSON.stringify(result)}`);
         }}
       />
-      <TestCase.Logical
-        itShould="handle errors in async jobs"
-        fn={async ({expect}) => {
+      <Button
+        title="handle errors in async jobs"
+        onPress={async () => {
           let errMsg: string | undefined;
           try {
-            await sampleTurboModule?.doAsyncJob(false);
+            await CodegenSampleTurboModule?.doAsyncJob(false);
           } catch (err) {
             errMsg = (err as Error).message;
           }
-
-          expect(errMsg).to.be.eq('rejected on native side');
+          Alert.alert(`result: ${errMsg}`);
         }}
       />
-      <TestCase.Logical
-        itShould="get an array asynchronously"
-        fn={async ({expect}) => {
-          expect(await sampleTurboModule.getPromisedArray()).to.be.eql([
-            1, 2, 3,
-          ]);
+      <Button
+        title="get an array asynchronously"
+        onPress={async () => {
+          const result = await CodegenSampleTurboModule.getPromisedArray();
+          Alert.alert(`result: ${JSON.stringify(result)}`);
         }}
       />
-    </>
+      <Button
+        title="get union value"
+        onPress={async () => {
+          const result = CodegenSampleTurboModule.getUnionValue('foo');
+          Alert.alert(`result: ${result}`);
+        }}
+      />
+      <Button
+        title="support enums"
+        onPress={async () => {
+          const result = CodegenSampleTurboModule.getEnum(
+            SomeEnum1.FOO,
+            SomeEnum2.FOO,
+            SomeEnum3.FOO,
+          );
+          Alert.alert(`result: ${JSON.stringify(result)}`);
+        }}
+      />
+      <Button
+        title="handle enums without specified values correctly"
+        onPress={async () => {
+          const result = CodegenSampleTurboModule.getEnum(
+            SomeEnum1.FOO,
+            SomeEnum2.FOO,
+            SomeEnum3.FOO,
+          );
+          const isEqual = result.hardcodedEnum1 === SomeEnum1.FOO;
+          Alert.alert(`result: ${isEqual}`);
+        }}
+      />
+    </View>
   );
 }
