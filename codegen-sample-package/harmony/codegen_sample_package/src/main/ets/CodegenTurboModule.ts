@@ -2,7 +2,7 @@ import { TurboModule, RNOHError, Tag } from '@rnoh/react-native-openharmony/ts';
 import { TM } from "@rnoh/react-native-openharmony/generated/ts"
 
 
-export class CodegenTurboModule extends TurboModule implements TM.CodegenSampleTurboModule.Spec {
+export class CodegenTurboModule extends TurboModule implements TM.CodegenSampleTurboModuleV1.Spec {
   private logger = this.ctx.logger.clone("CodegenTurboModuleLogger")
 
   getConstants(): Object {
@@ -17,18 +17,18 @@ export class CodegenTurboModule extends TurboModule implements TM.CodegenSampleT
     return arg
   }
 
-  getEnum(enum1: TM.CodegenSampleTurboModule.SomeEnum1, enum2: TM.CodegenSampleTurboModule.SomeEnum2,
-    enum3: TM.CodegenSampleTurboModule.SomeEnum3): {
-    enum1: TM.CodegenSampleTurboModule.SomeEnum1;
-    enum2: TM.CodegenSampleTurboModule.SomeEnum2;
-    enum3: TM.CodegenSampleTurboModule.SomeEnum3;
-    hardcodedEnum1: TM.CodegenSampleTurboModule.SomeEnum1;
+  getEnum(enum1: TM.CodegenSampleTurboModuleV1.SomeEnum1, enum2: TM.CodegenSampleTurboModuleV1.SomeEnum2,
+    enum3: TM.CodegenSampleTurboModuleV1.SomeEnum3): {
+    enum1: TM.CodegenSampleTurboModuleV1.SomeEnum1;
+    enum2: TM.CodegenSampleTurboModuleV1.SomeEnum2;
+    enum3: TM.CodegenSampleTurboModuleV1.SomeEnum3;
+    hardcodedEnum1: TM.CodegenSampleTurboModuleV1.SomeEnum1;
   } {
     return {
       enum1,
       enum2,
       enum3,
-      hardcodedEnum1: TM.CodegenSampleTurboModule.SomeEnum1.FOO
+      hardcodedEnum1: TM.CodegenSampleTurboModuleV1.SomeEnum1.FOO
     }
   }
 

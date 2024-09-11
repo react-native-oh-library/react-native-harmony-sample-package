@@ -52,4 +52,4 @@ export interface Spec extends TurboModule {
   getUnsafeObject(arg: Object): Object;
 }
 
-export default TurboModuleRegistry.get<Spec>('CodegenSampleTurboModuleV2')!;
+export default TurboModuleRegistry.get<Spec>('CodegenSampleTurboModuleV1')!;

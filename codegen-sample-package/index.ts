@@ -7,5 +7,7 @@ export type { GeneratedSampleComponentCAPIRef } from "./src/Fabric/IndexCAPI";
 export { GeneratedSampleComponentArkTS } from "./src/Fabric/IndexArkTS";
 export { GeneratedSampleComponentCAPI } from "./src/Fabric/IndexCAPI";
 
-export type { SomeEnum1, SomeEnum2, SomeEnum3 } from "./src/TurboModule/specs/v2/NativeGeneratedSampleTurboModule";
-export {default as CodegenSampleTurboModule} from "./src/TurboModule/specs/v2/NativeGeneratedSampleTurboModule";
+export { SomeEnum1, SomeEnum2, SomeEnum3 } from "./src/TurboModule/specs/v2/NativeGeneratedSampleTurboModule";
+export { default as CodegenSampleTurboModuleV1 } from "./src/TurboModule/specs/v1/NativeGeneratedSampleTurboModule";
+export { default as CodegenSampleTurboModuleV2 } from "./src/TurboModule/specs/v2/NativeGeneratedSampleTurboModule";
+
