@@ -28,7 +28,8 @@
       {
         "version": 1,
         "specPaths": [
-          "./src/Fabric/specs/v1"
+          "./src/Fabric/specs/v1",
+          "./src/TurboModule/specs/v1"
         ]
       },
       {

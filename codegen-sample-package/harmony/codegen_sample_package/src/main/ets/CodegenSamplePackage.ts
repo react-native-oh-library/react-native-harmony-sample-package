@@ -13,14 +13,17 @@ import { CodegenTurboModule } from './CodegenTurboModule';
 
 class CodegenSampleTurboModulesFactory extends TurboModulesFactory {
   createTurboModule(name: string): TurboModule | null {
-    if (name === TM.CodegenSampleTurboModule.NAME) {
+    if (name === TM.CodegenSampleTurboModuleV1.NAME) {
+      return new CodegenTurboModule(this.ctx);
+    }
+    if (name === TM.CodegenSampleTurboModuleV2.NAME) {
       return new CodegenTurboModule(this.ctx);
     }
     return null;
   }
 
   hasTurboModule(name: string): boolean {
-    return name === TM.CodegenSampleTurboModule.NAME;
+    return name === TM.CodegenSampleTurboModuleV1.NAME || name === TM.CodegenSampleTurboModuleV2.NAME;
   }
 }
 
