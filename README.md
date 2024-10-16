@@ -2,11 +2,9 @@
 
 ## 文档地址 / Documentation URL 
 
-[中文 / Chinese](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/react-native-harmony-sample-package.md)
+[中文](https://gitee.com/react-native-oh-library/usage-docs/blob/master/zh-cn/react-native-harmony-sample-package.md)
 
-## Codegen
-
-该库已接入 codegen，具体请查阅文档。
+[English](https://gitee.com/react-native-oh-library/usage-docs/blob/master/en/react-native-harmony-sample-package.md)
 
 ## 请悉知 / Acknowledgements
 
